@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Para ti</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 20px;
+  }
+  svg {
+    width: 260px;
+    height: 320px;
+    overflow: visible;
+  }
+  .draw {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: drawStroke 2.2s ease forwards;
+  }
+  .fill-fade {
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+  .msg {
+    margin-top: 18px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: showText 1s ease 2s forwards;
+  }
+  .msg p {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+  }
+  .msg h1 {
+    font-size: 2.1rem;
+    color: #ff4d6d;
+    letter-spacing: 1px;
+  }
+  @keyframes drawStroke {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  @keyframes showText {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <svg viewBox="-150 -160 300 340">
+    <!-- Tallo -->
+    <path class="draw" d="M 0 150 L 0 -10" stroke="#2e8b57" stroke-width="8" fill="none" stroke-linecap="round" />
+    <!-- Hoja izquierda -->
+    <path class="draw fill-fade" d="M 0 95 Q -65 55 -85 10 Q -35 20 0 95 Z" fill="#2e8b57" stroke="#3cb371" stroke-width="2" />
+    <!-- Hoja derecha -->
+    <path class="draw fill-fade" d="M 0 70 Q 65 30 85 -15 Q 35 -5 0 70 Z" fill="#2e8b57" stroke="#3cb371" stroke-width="2" />
+    <!-- Pétalos exteriores -->
+    <g class="fill-fade" transform="translate(0, -35)">
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(0)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(45)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(90)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(135)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(180)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(225)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(270)" />
+      <ellipse cx="0" cy="-52" rx="22" ry="48" fill="#dc143c" stroke="#8b0000" stroke-width="2" transform="rotate(315)" />
+      <!-- Pétalos interiores -->
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(22)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(67)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(112)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(157)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(202)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(247)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(292)" />
+      <ellipse cx="0" cy="-32" rx="16" ry="34" fill="#ff2a55" stroke="#a50021" stroke-width="2" transform="rotate(337)" />
+      <!-- Centro -->
+      <circle cx="0" cy="0" r="18" fill="#ffb703" stroke="#ffd700" stroke-width="2" />
+    </g>
+  </svg>
+
+  <div class="msg">
+    <p>No olvides que</p>
+    <h1>TE AMO</h1>
+  </div>
+</body>
+</html>
